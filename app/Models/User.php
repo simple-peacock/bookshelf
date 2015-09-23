@@ -36,4 +36,12 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Get the books borrowed by this user
+     */
+    public function books()
+    {
+        return $this->hasMany('App\Models\Book');
+    }
 }
