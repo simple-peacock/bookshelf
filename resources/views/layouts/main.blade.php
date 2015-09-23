@@ -18,7 +18,7 @@
     <h1 class="main-header">Bookshelf</h1>
     <ul class="header-subnav">
       <li><a href="{{ action('BookController@index') }}" class="is-active">Home</a></li>
-      <li><a href="#">Borrow Book</a></li>
+      <li><a href="{{ action('BookController@create') }}">Borrow Book</a></li>
       <li><a href="#">Help</a></li>
     </ul>
   </header>
