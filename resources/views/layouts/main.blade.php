@@ -3,12 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <title>@yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('css/foundation.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/custom-styles.css') }}" />
+    <script src="{{ asset('js/vendor/modernizr.js') }}"></script>
   </head>
   <body>
-    
+
+  <!--
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+  -->
+
+  <header class="header">
+    <h1 class="main-header">Bookshelf</h1>
+    <ul class="header-subnav">
+      <li><a href="{{ action('BookController@index') }}" class="is-active">Home</a></li>
+      <li><a href="#">Borrow Book</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </header>
+
     <div class="row">
       <div class="large-12 columns">
         <h1>Welcome to Foundation</h1>
