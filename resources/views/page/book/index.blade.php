@@ -1,7 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Peter
- * Date: 23/09/2015
- * Time: 9:40 PM
- */
+@extends('layouts.main')
+
+@section('content')
+    <p>This is the index view</p>
+@endsection
