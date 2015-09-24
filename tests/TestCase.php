@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Database\Eloquent\Model;
+
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     /**
