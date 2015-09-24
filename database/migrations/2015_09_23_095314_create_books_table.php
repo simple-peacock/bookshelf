@@ -16,7 +16,7 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('author');
-            $table->string('barcode')->nullable();
+            $table->string('barcode');
             $table->string('status');
             $table->string('name');
             $table->string('email');
