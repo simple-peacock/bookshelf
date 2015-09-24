@@ -16,13 +16,10 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('author');
-            $table->string('barcode');
+            $table->string('barcode')->nullable();
             $table->string('status');
-
-            // we want to know who borrowed the book
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-
+            $table->string('name');
+            $table->string('email');
             $table->timestamp('borrowed_at');
             $table->timestamp('returned_at');
         });
