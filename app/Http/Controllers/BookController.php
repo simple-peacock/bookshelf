@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 
 class BookController extends Controller
 {
@@ -36,7 +37,25 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required|string|max:255',
+            'author' => 'required|string|max:255',
+            'barcode' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+        ]);
+
+        try {
+
+            $book = Book::create($request->all());
+            $book->borrowed_at = new \DateTime;
+            $book->save();
+
+        } catch(\Exception $e) {
+            return redirect()->back()->withErrors(['An unknown error has occurred while attempting to save this record']);
+        }
+
+        return redirect(action('BookController@index'))->with('success',['The record was successfully saved']);
     }
 
     /**
