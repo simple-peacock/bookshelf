@@ -1,4 +1,4 @@
-## Laravel PHP Framework
+## Bookshelf
 
 [Live Demo](http://bookshelf.peterplucinski.com)
 
