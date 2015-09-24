@@ -17,15 +17,16 @@
   <header class="header">
     <h1 class="main-header">Bookshelf</h1>
     <ul class="header-subnav">
-      <li><a href="{{ action('BookController@index') }}" class="is-active">Home</a></li>
-      <li><a href="{{ action('BookController@create') }}">Borrow Book</a></li>
+      <li><a href="{{ action('BookController@index') }}" class="{{ Request::is('book') ? 'is-active' : '' }}">Home</a></li>
+      <li><a href="{{ action('BookController@create') }}" class="{{ Request::is('book/create') ? 'is-active' : '' }}">Borrow Book</a></li>
       <li><a href="#">Help</a></li>
     </ul>
   </header>
 
     <div class="row">
-      <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
+      <div class="medium-12 columns">
+
+        @include('partial.book.messages')
 
         @yield('content')
 
