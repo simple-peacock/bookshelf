@@ -61,6 +61,33 @@ class BookController extends Controller
     }
 
     /**
+     * Return a book
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function returnBook($id)
+    {
+        $book = Book::find($id);
+
+        if(count($book)==0){
+            abort(404);
+        }
+
+        try {
+
+            $book->status = 'returned';
+            $book->returned_at = new \DateTime;
+            $book->save();
+
+        } catch(\Exception $e) {
+            return redirect()->back()->withErrors(['An unknown error has occurred while attempting to save this record']);
+        }
+
+        return redirect(action('BookController@index'))->with('success',['Thankyou, the book has been returned.']);
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
