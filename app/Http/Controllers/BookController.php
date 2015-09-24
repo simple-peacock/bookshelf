@@ -16,7 +16,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('page.book.index');
+        $books = Book::where('status','=','borrowed')->get();
+        return view('page.book.index',['books'=>$books]);
     }
 
     /**
@@ -48,6 +49,7 @@ class BookController extends Controller
         try {
 
             $book = Book::create($request->all());
+            $book->status = 'borrowed';
             $book->borrowed_at = new \DateTime;
             $book->save();
 
