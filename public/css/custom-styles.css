@@ -42,3 +42,7 @@
     color: #333;
     transition: all .25s ease-in-out;
 }
+
+#main-content {
+    margin-top: 25px;
+}

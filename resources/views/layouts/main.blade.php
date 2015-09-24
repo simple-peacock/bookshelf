@@ -10,10 +10,6 @@
   </head>
   <body>
 
-  <!--
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
-  -->
-
   <header class="header">
     <h1 class="main-header">Bookshelf</h1>
     <ul class="header-subnav">
@@ -23,8 +19,8 @@
     </ul>
   </header>
 
-    <div class="row">
-      <div class="medium-12 columns">
+    <div class="row" id="main-content">
+      <div class="small-8 small-centered columns">
 
         @include('partial.book.messages')
 
