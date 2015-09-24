@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     /**
-     * Get the user who borrowed the book
+     * The attributes that are mass assignable.
+     *
+     * @var array
      */
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User');
-    }
+    protected $fillable = ['title','author','barcode','name','email'];
+
+    // we will be setting our own timestamps
+    public $timestamps = false;
 }
