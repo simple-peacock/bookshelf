@@ -32,7 +32,7 @@
         </table>
 
     @else
-        <p>Currently, there are no books borrowed out.</p>
+        <p>There are no books borrowed out.</p>
     @endif
 
 @endsection
